@@ -31,4 +31,16 @@ RSpec.describe AlbumRepository do
     expect(albums[1].release_year).to eq('1988')
     expect(albums[1].artist_id).to eq('1')
   end
+
+  it 'returns a single album given its ID' do 
+    repo = AlbumRepository.new 
+
+    album = repo.find(1) 
+
+    expect(album.id).to eq (1)
+    expect(album.title).to eq 'Doolittle'
+    expect(album.release_year).to eq '1989'
+    expect(album.artist_id).to eq 1
+  end
+
 end 

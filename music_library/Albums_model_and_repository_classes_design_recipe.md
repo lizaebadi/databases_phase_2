@@ -99,13 +99,22 @@ Your Repository class will need to implement methods for each "read" or "write" 
 
 class AlbumRepository
 
-  # Selecting all records
+  # Selecting all albums
   # No arguments
   def all
     # Executes the SQL query:
     # SELECT id, title, release_year, artist_id FROM albums;
 
     # Returns an array of Album objects.
+  end
+
+  # Gets a single album by its ID
+  # One argument: the id (number)
+  def find(id)
+    # Executes the SQL query:
+    # SELECT id, title, release_year FROM albums WHERE id = $1;
+
+    # Returns a single Album object.
   end
 
 end
@@ -136,6 +145,18 @@ albums[1].id # =>  2
 albums[1].name # =>  'Surfer Rosa'
 albums[1].cohort_name # =>  '1988'
 albums[1].artist_id # =>  1
+
+# 2
+# Get a single album by its ID
+
+repo = AlbumRepository.new 
+
+album = repo.find(2) 
+
+album.id # =>  2
+album.name # =>  'Surfer Rosa'
+album.cohort_name # =>  '1988'
+album.artist_id # =>  1
 
 
 
