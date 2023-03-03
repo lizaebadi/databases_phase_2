@@ -3,11 +3,11 @@ require_relative 'lib/album_repository'
 
 DatabaseConnection.connect('music_library')
 
-result = DatabaseConnection.exec_params('SELECT * FROM albums;', [])
+# result = DatabaseConnection.exec_params('SELECT * FROM albums;', [])
 
-result.each do |record|
-  p record
-end
+#result.each do |record|
+#  p record
+#end
 
 album_repository = AlbumRepository.new
 
