@@ -165,6 +165,25 @@ album.name # =>  'Surfer Rosa'
 album.cohort_name # =>  '1988'
 album.artist_id # =>  1
 
+# 3 
+# create a single album
+
+repo = AlbumRepository.new
+
+album = Album.new
+album.title = 'Trompe le Monde'
+album.release_year = 1991
+album.artist_id = 1
+
+repo.create(album) # => nil
+
+all_albums = repo.all
+
+last_album = all_albums.last
+last_album.title #=> 'Trompe le Monde'
+last_album.release_year #=> 1991
+last_album.artist_id #=> 1
+
 
 
 7. Reload the SQL seeds before each test run
