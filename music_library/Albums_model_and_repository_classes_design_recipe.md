@@ -117,6 +117,13 @@ class AlbumRepository
     # Returns a single Album object.
   end
 
+  def create(album)
+  # Executes the SQL query: 
+  # INSERT INTO albums (title, release_year, artist_id) VALUES ($1, $2, $3);
+
+  # Doesn't return anything (only creates the album)
+  end 
+
 end
 ```
 6. Write Test Examples
